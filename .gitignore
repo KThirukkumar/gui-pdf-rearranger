@@ -34,3 +34,6 @@ PDF Rearranger.spec
 pip-wheel-metadata/
 .pytest_cache/
 .mypy_cache/
+
+# Ignore PDF files (these are the output of the application, not source files)
+*.pdf
