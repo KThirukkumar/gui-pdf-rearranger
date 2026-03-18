@@ -14,3 +14,10 @@ dmg_staging/*
 # Ignore virtual environment directories
 .venv
 .venv/*
+
+# Build artifacts
+dist/
+build/
+*.dmg
+*.pkg
+PDF Rearranger.spec
