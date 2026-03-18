@@ -1,0 +1,5 @@
+PyMuPDF>=1.22.0
+PyQt5>=5.15.0
+Pillow>=9.0.0
+pyinstaller>=5.0
+ocrmypdf>=13.0.0

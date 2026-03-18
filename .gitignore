@@ -1,0 +1,39 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore GitHub-related files and directories
+.github/*
+.github/**/*
+.github
+
+# Ignore staging directories for DMG files
+dmg_staging/*
+
+
+# Ignore virtual environment directories
+.venv
+.venv/*
+
+# Build artifacts
+dist/
+build/
+*.dmg
+*.pkg
+PDF Rearranger.spec
+
+# macOS
+.DS_Store
+
+# Editor/project files
+.vscode/
+.idea/
+
+# Python packaging/build
+*.egg-info/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+
+# Ignore PDF files (these are the output of the application, not source files)
+*.pdf
