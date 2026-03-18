@@ -4,6 +4,8 @@ set -euo pipefail
 APP_NAME="PDF Rearranger"
 DIST_DIR="dist"
 STAGING_DIR="dmg_staging"
+# Packaging version (bump when releasing)
+VERSION="0.2.1"
 
 echo "Building macOS app bundle with PyInstaller..."
 if ! command -v pyinstaller >/dev/null 2>&1; then
@@ -29,6 +31,9 @@ if [[ -f "$ICON_PNG" ]]; then
   if [[ -f "$PLIST" ]]; then
     /usr/libexec/PlistBuddy -c "Add :CFBundleIconFile string $ICNS_NAME" "$PLIST" 2>/dev/null || \
     /usr/libexec/PlistBuddy -c "Set :CFBundleIconFile $ICNS_NAME" "$PLIST" || true
+    # set short version string to match release
+    /usr/libexec/PlistBuddy -c "Add :CFBundleShortVersionString string $VERSION" "$PLIST" 2>/dev/null || \
+    /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $VERSION" "$PLIST" || true
   fi
 fi
 
