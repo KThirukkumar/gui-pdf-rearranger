@@ -1,0 +1,16 @@
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore GitHub-related files and directories
+.github/*
+.github/**/*
+.github
+
+# Ignore staging directories for DMG files
+dmg_staging/*
+
+
+# Ignore virtual environment directories
+.venv
+.venv/*
