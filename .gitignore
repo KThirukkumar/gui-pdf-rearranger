@@ -21,3 +21,16 @@ build/
 *.dmg
 *.pkg
 PDF Rearranger.spec
+
+# macOS
+.DS_Store
+
+# Editor/project files
+.vscode/
+.idea/
+
+# Python packaging/build
+*.egg-info/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
