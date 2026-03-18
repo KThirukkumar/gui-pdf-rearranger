@@ -69,6 +69,30 @@ CI notes (GitHub Actions):
 - The workflow `.github/workflows/macos_build.yml` demonstrates how to decode a base64-encoded signing certificate (stored as `CERT_P12` secret), import it into a temporary keychain, build, sign and notarize using the `APPLE_ID` and `APPLE_PASSWORD` secrets.
 - Required repository secrets (examples): `CERT_P12` (base64), `CERT_P12_PASSWORD`, `SIGNING_ID`, `APPLE_ID`, `APPLE_PASSWORD`, `TEAM_ID`.
 
+Building a Windows executable
+----------------------------
+
+There are two recommended ways to produce a Windows `.exe`:
+
+- Local on Windows: run the included PyInstaller command (requires Python + PyInstaller installed):
+
+```bash
+# on Windows (PowerShell / cmd)
+pip install -r requirements.txt pyinstaller
+pyinstaller --noconfirm --windowed --name "PDF Rearranger" main.py
+```
+
+- From macOS/Linux using Docker (uses a Wine-based PyInstaller image):
+
+```bash
+./scripts/build_windows_exe.sh
+```
+
+This script uses the `cdrx/pyinstaller-windows` Docker image to run PyInstaller inside a Wine environment and will place the resulting artifacts under `dist/` on the host.
+
+CI (recommended): use the provided GitHub Actions workflow `.github/workflows/build-windows.yml` which builds the exe on a Windows runner and uploads the `dist/` folder as a workflow artifact.
+
+
 Usage
 - Drag one or more PDF files onto the window, or click "Import PDFs".
 - Reorder pages by dragging items in the list.
