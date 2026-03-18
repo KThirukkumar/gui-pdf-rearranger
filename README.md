@@ -4,7 +4,7 @@ PDF Rearranger — a small PyQt5 desktop GUI for reordering, extracting, and sav
 
 PDF Rearranger is a lightweight desktop application (built with PyQt5) for quickly rearranging pages in PDF documents using PyMuPDF for PDF manipulation and Pillow for image handling. This repository contains the source entrypoint (`main.py`), dependency list (`requirements.txt`), developer scripts (`run.sh`, `Makefile`), and macOS packaging artifacts and helpers (`build_dmg.sh`, `create_icns.sh`, `codesign_and_notarize.sh`, and the `dmg_staging` folder) to produce a standalone, signed .app and distributable DMG.
 
-Version: 0.2.0
+Version: 0.2.1
 
 Simple drag-and-drop GUI to import PDFs, rearrange pages, delete pages, and save the result as a single PDF.
 
